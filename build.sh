@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SECONDS=0 # builtin bash timer
-ZIPNAME="Lightning.Kernel_$(TZ=Europe/Istanbul date +"%Y%m%d-%H%M").zip"
+ZIPNAME="Moe.Kernel_$(TZ=Europe/Istanbul date +"%Y%m%d-%H%M").zip"
 TC_DIR="$HOME/tc/r498229b"
 GCC_64_DIR="$HOME/tc/aarch64-linux-android-4.9"
 GCC_32_DIR="$HOME/tc/arm-linux-androideabi-4.9"
@@ -43,7 +43,7 @@ rm -rf KernelSU && curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/m
 if [ "$KSU" = true ]; then
 sed -i 's/CONFIG_LOCALVERSION="\(.*\)"/CONFIG_LOCALVERSION="\1-KSU"/' arch/arm64/configs/$DEFCONFIG
 sed -i 's/CONFIG_KSU=n/CONFIG_KSU=y/' arch/arm64/configs/$DEFCONFIG
-ZIPNAME="Lightning.Kernel_$(TZ=Europe/Istanbul date +"%Y%m%d-%H%M")_KSU.zip"
+ZIPNAME="Moe.Kernel_$(TZ=Europe/Istanbul date +"%Y%m%d-%H%M")_KSU.zip"
 fi
 
 mkdir -p out
